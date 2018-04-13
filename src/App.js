@@ -15,7 +15,7 @@ class App extends Component {
             <Layout>
                 <HeaderCustom />
                 <Content style={{ margin: '0 16px', overflow: 'initial' }}>
-                    Hello
+                    {this.props.children}
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
                     Ant Design ©2016 Created by Ant UED
