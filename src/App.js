@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
         <Layout className="ant-layout-has-sider">
-            <SiderCustom />
+            <SiderCustom path={this.props.location.pathname} />
             <Layout>
                 <HeaderCustom />
                 <Content style={{ margin: '0 16px', overflow: 'initial' }}>

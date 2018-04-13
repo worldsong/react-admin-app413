@@ -69,6 +69,7 @@ class SiderCustom extends Component {
                     >
 
                         <Menu.Item key="/app/basicForm"><Link to={'/app/form/basicForm'}>基础表单</Link></Menu.Item>
+                        <Menu.Item key="/app/wrappedform"><Link to={'/app/form/wrappedform'}>复杂表单</Link></Menu.Item>
                     </SubMenu>
                 </Menu>
                 <style>
