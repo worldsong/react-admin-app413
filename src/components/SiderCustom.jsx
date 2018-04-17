@@ -56,6 +56,12 @@ class SiderCustom extends Component {
                     onOpenChange={this.openMenu}
                 >
                     <SubMenu
+                        key="page"
+                        title={<span><Icon type="switcher" /><span className="nav-text">页面</span></span>}
+                    >
+                        <Menu.Item key="/login"><Link to={'/login'}>登录</Link>登录</Menu.Item>
+                    </SubMenu>
+                    <SubMenu
                         key="/app/table"
                         title={<span><Icon type="copy" /><span className="nav-text">表格</span></span>}
                     >

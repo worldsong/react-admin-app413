@@ -10,6 +10,7 @@ import BasicTable from './components/tables/BasicTables'
 import AdvancedTable from './components/tables/AdvancedTables'
 
 import AsynchronousTable from './components/tables/AsynchronousTable';
+import Login from './components/pages/Login';
 
 ReactDOM.render(
   <Router history={hashHistory}>
@@ -27,6 +28,7 @@ ReactDOM.render(
 
               </Route>
           </Route>
+          <Route path={'login'} components={Login} />
       </Route>
   </Router>,
   document.getElementById('root')
