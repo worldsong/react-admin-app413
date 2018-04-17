@@ -15,6 +15,9 @@ import Icons from './components/ui/Icons';
 import Buttons from './components/ui/Buttons';
 import Spins from './components/ui/Spins';
 
+import Echarts from './components/charts/Echarts';
+import Recharts from './components/charts/Recharts';
+
 ReactDOM.render(
   <Router history={hashHistory}>
       <Route path={'/' } components={Page}>
@@ -33,6 +36,10 @@ ReactDOM.render(
                   <Route path={'icons'} component={Icons} />
                   <Route path={'buttons'} component={Buttons} />
                   <Route path={'spins'} component={Spins} />
+              </Route>
+              <Route path={'chart'}>
+                  <Route path={'echarts'} component={Echarts} />
+                  <Route path={'recharts'} component={Recharts} />
               </Route>
           </Route>
           <Route path={'login'} components={Login} />

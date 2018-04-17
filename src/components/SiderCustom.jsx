@@ -56,6 +56,13 @@ class SiderCustom extends Component {
                     onOpenChange={this.openMenu}
                 >
                     <SubMenu
+                        key="/app/chart"
+                        title={<span><Icon type="area-chart" /><span className="nav-text">图表</span></span>}
+                    >
+                        <Menu.Item key="/app/chart/echarts"><Link to={'/app/chart/echarts'}>echarts</Link></Menu.Item>
+                        <Menu.Item key="/app/chart/recharts"><Link to={'/app/chart/recharts'}>recharts</Link></Menu.Item>
+                    </SubMenu>
+                    <SubMenu
                         key="page"
                         title={<span><Icon type="switcher" /><span className="nav-text">页面</span></span>}
                     >
