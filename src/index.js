@@ -11,6 +11,9 @@ import AdvancedTable from './components/tables/AdvancedTables'
 
 import AsynchronousTable from './components/tables/AsynchronousTable';
 import Login from './components/pages/Login';
+import Icons from './components/ui/Icons';
+import Buttons from './components/ui/Buttons';
+import Spins from './components/ui/Spins';
 
 ReactDOM.render(
   <Router history={hashHistory}>
@@ -25,7 +28,11 @@ ReactDOM.render(
                   <Route path={'basicTable'} component={BasicTable} />
                   <Route path={'advancedTable'} components={AdvancedTable} />
                   <Route path={'asynchronousTable'} components={AsynchronousTable} />
-
+              </Route>
+              <Route path={'ui'}>
+                  <Route path={'icons'} component={Icons} />
+                  <Route path={'buttons'} component={Buttons} />
+                  <Route path={'spins'} component={Spins} />
               </Route>
           </Route>
           <Route path={'login'} components={Login} />

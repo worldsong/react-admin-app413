@@ -62,6 +62,15 @@ class SiderCustom extends Component {
                         <Menu.Item key="/login"><Link to={'/login'}>登录</Link>登录</Menu.Item>
                     </SubMenu>
                     <SubMenu
+                        key="/app/ui"
+                        title={<span><Icon type="scan" /><span className="nav-text">UI</span></span>}
+                    >
+
+                        <Menu.Item key="/app/ui/buttons"><Link to={'/app/ui/buttons'}>按钮</Link></Menu.Item>
+                        <Menu.Item key="/app/ui/icons"><Link to={'/app/ui/icons'}>图标</Link></Menu.Item>
+                        <Menu.Item key="/app/ui/spins"><Link to={'/app/ui/spins'}>加载中</Link></Menu.Item>
+                    </SubMenu>
+                    <SubMenu
                         key="/app/table"
                         title={<span><Icon type="copy" /><span className="nav-text">表格</span></span>}
                     >
