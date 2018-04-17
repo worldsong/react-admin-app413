@@ -9,6 +9,8 @@ import WrappedForm from './components/forms/WrappedForm'
 import BasicTable from './components/tables/BasicTables'
 import AdvancedTable from './components/tables/AdvancedTables'
 
+import AsynchronousTable from './components/tables/AsynchronousTable';
+
 ReactDOM.render(
   <Router history={hashHistory}>
       <Route path={'/' } components={Page}>
@@ -21,6 +23,8 @@ ReactDOM.render(
               <Route path={'table'}>
                   <Route path={'basicTable'} component={BasicTable} />
                   <Route path={'advancedTable'} components={AdvancedTable} />
+                  <Route path={'asynchronousTable'} components={AsynchronousTable} />
+
               </Route>
           </Route>
       </Route>
