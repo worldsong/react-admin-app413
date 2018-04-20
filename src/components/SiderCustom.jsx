@@ -67,6 +67,8 @@ class SiderCustom extends Component {
                         title={<span><Icon type="switcher" /><span className="nav-text">页面</span></span>}
                     >
                         <Menu.Item key="/login"><Link to={'/login'}>登录</Link>登录</Menu.Item>
+                        <Menu.Item key="/404"><Link to={'/404'}>404</Link></Menu.Item>
+
                     </SubMenu>
                     <SubMenu
                         key="/app/ui"

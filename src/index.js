@@ -19,6 +19,7 @@ import Echarts from './components/charts/Echarts';
 import Recharts from './components/charts/Recharts';
 
 import Banners from './components/ui/banners';
+import NotFound from './components/pages/NotFound';
 
 ReactDOM.render(
   <Router history={hashHistory}>
@@ -47,6 +48,7 @@ ReactDOM.render(
               </Route>
           </Route>
           <Route path={'login'} components={Login} />
+          <Route path={'404'} component={NotFound} />
       </Route>
   </Router>,
   document.getElementById('root')
