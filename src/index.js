@@ -20,6 +20,7 @@ import Recharts from './components/charts/Recharts';
 
 import Banners from './components/ui/banners';
 import NotFound from './components/pages/NotFound';
+import Modals from './components/ui/Modals';
 
 ReactDOM.render(
   <Router history={hashHistory}>
@@ -40,6 +41,7 @@ ReactDOM.render(
                   <Route path={'buttons'} component={Buttons} />
                   <Route path={'spins'} component={Spins} />
                   <Route path={'banners'} component={Banners} />
+                  <Route path={'modals'} component={Modals} />
 
               </Route>
               <Route path={'chart'}>
