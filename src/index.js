@@ -22,6 +22,7 @@ import Banners from './components/ui/banners';
 import NotFound from './components/pages/NotFound';
 import Modals from './components/ui/Modals';
 import Notifications from './components/ui/Notifications';
+import Tabs from './components/ui/Tabs';
 
 ReactDOM.render(
   <Router history={hashHistory}>
@@ -44,6 +45,7 @@ ReactDOM.render(
                   <Route path={'banners'} component={Banners} />
                   <Route path={'modals'} component={Modals} />
                   <Route path={'notifications'} component={Notifications} />
+                  <Route path={'tabs'} component={Tabs} />
 
               </Route>
               <Route path={'chart'}>
