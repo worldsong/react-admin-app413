@@ -23,6 +23,7 @@ import NotFound from './components/pages/NotFound';
 import Modals from './components/ui/Modals';
 import Notifications from './components/ui/Notifications';
 import Tabs from './components/ui/Tabs';
+import Wysiwyg from './components/ui/Wysiwyg';
 
 ReactDOM.render(
   <Router history={hashHistory}>
@@ -46,6 +47,7 @@ ReactDOM.render(
                   <Route path={'modals'} component={Modals} />
                   <Route path={'notifications'} component={Notifications} />
                   <Route path={'tabs'} component={Tabs} />
+                  <Route path={'wysiwyg'} component={Wysiwyg} />
 
               </Route>
               <Route path={'chart'}>
