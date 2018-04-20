@@ -24,6 +24,7 @@ import Modals from './components/ui/Modals';
 import Notifications from './components/ui/Notifications';
 import Tabs from './components/ui/Tabs';
 import Wysiwyg from './components/ui/Wysiwyg';
+import Drags from './components/ui/Draggable';
 
 ReactDOM.render(
   <Router history={hashHistory}>
@@ -48,6 +49,7 @@ ReactDOM.render(
                   <Route path={'notifications'} component={Notifications} />
                   <Route path={'tabs'} component={Tabs} />
                   <Route path={'wysiwyg'} component={Wysiwyg} />
+                  <Route path={'drags'} component={Drags} />
 
               </Route>
               <Route path={'chart'}>
