@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import BreadcrumbCustom from '../BreadcrumbCustom';
+
 import {
     Card, Form, Select, InputNumber, Switch, Radio,
     Slider, Button, Upload, Icon, Rate,
@@ -32,6 +34,7 @@ class Demo extends React.Component {
         };
         return (
             <div className="gutter-box">
+                <BreadcrumbCustom first="Form" second="复杂表单" />
                 <Card title="复杂表单" bordered={false}>
                     <Form onSubmit={this.handleSubmit}>
                         <FormItem

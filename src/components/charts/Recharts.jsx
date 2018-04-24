@@ -4,11 +4,13 @@ import RechartsSimpleLineChart from './RechartsSimpleLineChart';
 import RechartsBarChart from './RechartsBarChart';
 import RechartsRadialBarChart from './RechartsRadialBarChart';
 import RechartsRadarChart from './RechartsRadarChart';
+import BreadcrumbCustom from '../BreadcrumbCustom';
 
 class Recharts extends React.Component {
     render() {
         return (
             <div className="gutter-example">
+                <BreadcrumbCustom first="Chart" second="Recharts" />
                 <Row gutter={16}>
                     <Col className="gutter-row" span={24}>
                         <div className="gutter-box">

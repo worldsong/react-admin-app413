@@ -4,11 +4,13 @@ import EchartsArea from './EchartsArea';
 import EchartsGraphnpm from './EchartsGraphnpm';
 import EchartsPie from './EchartsPie';
 import EchartsScatter from './EchartsScatter';
+import BreadcrumbCustom from '../BreadcrumbCustom';
 
 class Echarts extends React.Component {
     render() {
         return (
             <div className="gutter-example">
+                <BreadcrumbCustom first="Chart" second="Echarts" />
                 <Row gutter={16}>
                     <Col className="gutter-row" span={24}>
                         <div className="gutter-box">
