@@ -63,6 +63,14 @@ class SiderCustom extends Component {
                         <Menu.Item key="/app/chart/recharts"><Link to={'/app/chart/recharts'}>recharts</Link></Menu.Item>
                     </SubMenu>
                     <SubMenu
+                        key="/app/animation"
+                        title={<span><Icon type="rocket" /><span className="nav-text">动画</span></span>}
+                    >
+
+                        <Menu.Item key="/app/animation/basicAnimations"><Link to={'/app/animation/basicAnimations'}>基础动画</Link></Menu.Item>
+                        <Menu.Item key="/app/animation/exampleAnimations"><Link to={'/app/animation/exampleAnimations'}>动画案例</Link></Menu.Item>
+                    </SubMenu>
+                    <SubMenu
                         key="page"
                         title={<span><Icon type="switcher" /><span className="nav-text">页面</span></span>}
                     >

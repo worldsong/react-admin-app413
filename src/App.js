@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
-const { Content, Footer } = Layout;
 
 import './style/index.less';
 
 import HeaderCustom from './components/HeaderCustom';
 import SiderCustom from './components/SiderCustom';
+
+const { Content, Footer } = Layout;
+
 
 class App extends Component {
   render() {

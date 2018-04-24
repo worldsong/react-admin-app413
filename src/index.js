@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
+import './style/lib/animate.css';
+
 import { Router, Route, hashHistory, IndexRedirect } from 'react-router';
 import BasicForm from './components/forms/BasicForm';
 import Page from './components/Page'
@@ -26,6 +28,10 @@ import Tabs from './components/ui/Tabs';
 import Wysiwyg from './components/ui/Wysiwyg';
 import Drags from './components/ui/Draggable';
 import Gallery from './components/ui/Gallery';
+
+import BasicAnimations from './components/animation/BasicAnimations';
+import ExampleAnimations from './components/animation/ExampleAnimations';
+
 
 ReactDOM.render(
   <Router history={hashHistory}>
@@ -52,11 +58,14 @@ ReactDOM.render(
                   <Route path={'wysiwyg'} component={Wysiwyg} />
                   <Route path={'drags'} component={Drags} />
                   <Route path={'gallery'} component={Gallery} />
-
               </Route>
               <Route path={'chart'}>
                   <Route path={'echarts'} component={Echarts} />
                   <Route path={'recharts'} component={Recharts} />
+              </Route>
+              <Route path={'animation'}>
+                  <Route path={'basicAnimations'} component={BasicAnimations} />
+                  <Route path={'exampleAnimations'} component={ExampleAnimations} />
               </Route>
           </Route>
           <Route path={'login'} components={Login} />
