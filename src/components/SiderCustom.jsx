@@ -18,8 +18,12 @@ class SiderCustom extends Component {
             selectedKey: _path
         });
     }
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
+        this.onCollapse(nextProps.collapsed);
+    }
     onCollapse = (collapsed) => {
-        console.log(collapsed);
+        console.log("bug find" + collapsed);
         this.setState({
             collapsed,
             mode: collapsed ? 'vertical' : 'inline',
@@ -41,10 +45,12 @@ class SiderCustom extends Component {
     render() {
         return (
             <Sider
+                trigger={null}
                 breakpoint="lg"
                 collapsible
-                collapsed={this.state.collapsed}
+                collapsed={this.props.collapsed}
                 onCollapse={this.onCollapse}
+                style={{overflowY: 'auto'}}
             >
                 <div className="logo" />
                 <Menu
@@ -93,7 +99,6 @@ class SiderCustom extends Component {
                         <Menu.Item key="/app/ui/wysiwyg"><Link to={'/app/ui/wysiwyg'}>富文本</Link></Menu.Item>
                         <Menu.Item key="/app/ui/drags"><Link to={'/app/ui/drags'}>拖拽</Link></Menu.Item>
                         <Menu.Item key="/app/ui/gallery"><Link to={'/app/ui/gallery'}>画廊</Link></Menu.Item>
-
                     </SubMenu>
                     <SubMenu
                         key="/app/table"
@@ -103,7 +108,6 @@ class SiderCustom extends Component {
                         <Menu.Item key="/app/table/basicTable"><Link to={'/app/table/basicTable'}>基础表格</Link></Menu.Item>
                         <Menu.Item key="/app/table/advancedTable"><Link to={'/app/table/advancedTable'}>高级表格</Link></Menu.Item>
                         <Menu.Item key="/app/table/asynchronousTable"><Link to={'/app/table/asynchronousTable'}>异步表格</Link></Menu.Item>
-
                     </SubMenu>
                     <SubMenu
                         key="/app/form"
