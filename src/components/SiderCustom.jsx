@@ -13,18 +13,22 @@ class SiderCustom extends Component {
         selectedKey: ''
     };
     componentDidMount() {
-        const _path = this.props.path;
-        this.setState({
-            openKey: _path.substr(0, _path.lastIndexOf('/')),
-            selectedKey: _path
-        });
+        this.setMenuOpen(this.props);
     }
     componentWillReceiveProps(nextProps) {
         console.log(nextProps);
         this.onCollapse(nextProps.collapsed);
+        this.setMenuOpen(nextProps)
     }
+    setMenuOpen = props => {
+        const {path} = props;
+        this.setState({
+            openKey: path.substr(0, path.lastIndexOf('/')),
+            selectedKey: path
+        });
+    };
     onCollapse = (collapsed) => {
-        console.log("bug find" + collapsed);
+        console.log(collapsed);
         this.setState({
             collapsed,
             mode: collapsed ? 'vertical' : 'inline',
@@ -48,9 +52,7 @@ class SiderCustom extends Component {
             <Sider
                 trigger={null}
                 breakpoint="lg"
-                collapsible
                 collapsed={this.props.collapsed}
-                onCollapse={this.onCollapse}
                 style={{overflowY: 'auto'}}
             >
                 <div className="logo" />
