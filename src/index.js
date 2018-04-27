@@ -37,7 +37,7 @@ import Dashboard from './components/dashboard/Dashboard';
 ReactDOM.render(
   <Router history={hashHistory}>
       <Route path={'/' } components={Page}>
-          <IndexRedirect to="/app/form/wrappedform" />
+          <IndexRedirect to="/app/dashboard/index" />
           <Route path={'app'} component={App}>
               <Route path={'form'}>
                   <Route path={'basicform'} components={BasicForm}></Route>
