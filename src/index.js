@@ -36,46 +36,63 @@ import Dashboard from './components/dashboard/Dashboard';
 
 import registerServiceWorker from './registerServiceWorker';
 
+import AuthBasic from './components/auth/Basic';
+import RouterEnter from './components/auth/RouterEnter';
+
+import { Provider } from 'react-redux';
+import configureStore from './store/index'
+const store = configureStore()
+
+const routes =
+    <Router history={hashHistory}>
+        <Route path={'/' } components={Page}>
+            <IndexRedirect to="/app/dashboard/index" />
+            <Route path={'app'} component={App}>
+                <Route path={'form'}>
+                    <Route path={'basicform'} components={BasicForm}></Route>
+                    <Route path={'wrappedform'} components={WrappedForm}></Route>
+                </Route>
+                <Route path={'table'}>
+                    <Route path={'basicTable'} component={BasicTable} />
+                    <Route path={'advancedTable'} components={AdvancedTable} />
+                    <Route path={'asynchronousTable'} components={AsynchronousTable} />
+                </Route>
+                <Route path={'ui'}>
+                    <Route path={'icons'} component={Icons} />
+                    <Route path={'buttons'} component={Buttons} />
+                    <Route path={'spins'} component={Spins} />
+                    <Route path={'banners'} component={Banners} />
+                    <Route path={'modals'} component={Modals} />
+                    <Route path={'notifications'} component={Notifications} />
+                    <Route path={'tabs'} component={Tabs} />
+                    <Route path={'wysiwyg'} component={Wysiwyg} />
+                    <Route path={'drags'} component={Drags} />
+                    <Route path={'gallery'} component={Gallery} />
+                </Route>
+                <Route path={'chart'}>
+                    <Route path={'echarts'} component={Echarts} />
+                    <Route path={'recharts'} component={Recharts} />
+                </Route>
+                <Route path={'animation'}>
+                    <Route path={'basicAnimations'} component={BasicAnimations} />
+                    <Route path={'exampleAnimations'} component={ExampleAnimations} />
+                </Route>
+                <Route path={'dashboard/index'} component={Dashboard} />
+                <Route path="auth">
+                    <Route path="basic" component={AuthBasic} />
+                    <Route path="routerEnter" component={RouterEnter} />
+                </Route>
+            </Route>
+            <Route path={'login'} components={Login} />
+            <Route path={'404'} component={NotFound} />
+        </Route>
+    </Router>
 ReactDOM.render(
-  <Router history={hashHistory}>
-      <Route path={'/' } components={Page}>
-          <IndexRedirect to="/app/dashboard/index" />
-          <Route path={'app'} component={App}>
-              <Route path={'form'}>
-                  <Route path={'basicform'} components={BasicForm}></Route>
-                  <Route path={'wrappedform'} components={WrappedForm}></Route>
-              </Route>
-              <Route path={'table'}>
-                  <Route path={'basicTable'} component={BasicTable} />
-                  <Route path={'advancedTable'} components={AdvancedTable} />
-                  <Route path={'asynchronousTable'} components={AsynchronousTable} />
-              </Route>
-              <Route path={'ui'}>
-                  <Route path={'icons'} component={Icons} />
-                  <Route path={'buttons'} component={Buttons} />
-                  <Route path={'spins'} component={Spins} />
-                  <Route path={'banners'} component={Banners} />
-                  <Route path={'modals'} component={Modals} />
-                  <Route path={'notifications'} component={Notifications} />
-                  <Route path={'tabs'} component={Tabs} />
-                  <Route path={'wysiwyg'} component={Wysiwyg} />
-                  <Route path={'drags'} component={Drags} />
-                  <Route path={'gallery'} component={Gallery} />
-              </Route>
-              <Route path={'chart'}>
-                  <Route path={'echarts'} component={Echarts} />
-                  <Route path={'recharts'} component={Recharts} />
-              </Route>
-              <Route path={'animation'}>
-                  <Route path={'basicAnimations'} component={BasicAnimations} />
-                  <Route path={'exampleAnimations'} component={ExampleAnimations} />
-              </Route>
-              <Route path={'dashboard/index'} component={Dashboard} />
-          </Route>
-          <Route path={'login'} components={Login} />
-          <Route path={'404'} component={NotFound} />
-      </Route>
-  </Router>,
+    <Provider store={store}>
+        <Router history={hashHistory}>
+            {routes}
+        </Router>
+    </Provider>,
   document.getElementById('root')
 );
 registerServiceWorker();
