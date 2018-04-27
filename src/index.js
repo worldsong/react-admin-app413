@@ -32,6 +32,7 @@ import Gallery from './components/ui/Gallery';
 import BasicAnimations from './components/animation/BasicAnimations';
 import ExampleAnimations from './components/animation/ExampleAnimations';
 
+import Dashboard from './components/dashboard/Dashboard';
 
 ReactDOM.render(
   <Router history={hashHistory}>
@@ -67,6 +68,7 @@ ReactDOM.render(
                   <Route path={'basicAnimations'} component={BasicAnimations} />
                   <Route path={'exampleAnimations'} component={ExampleAnimations} />
               </Route>
+              <Route path={'dashboard/index'} component={Dashboard} />
           </Route>
           <Route path={'login'} components={Login} />
           <Route path={'404'} component={NotFound} />

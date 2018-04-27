@@ -61,6 +61,9 @@ class SiderCustom extends Component {
                     openKeys={[this.state.openKey]}
                     onOpenChange={this.openMenu}
                 >
+                    <Menu.Item key="/app/dashboard/index">
+                        <Link to={'/app/dashboard/index'}><Icon type="mobile" /><span className="nav-text">首页</span></Link>
+                    </Menu.Item>
                     <SubMenu
                         key="/app/chart"
                         title={<span><Icon type="area-chart" /><span className="nav-text">图表</span></span>}
@@ -72,7 +75,6 @@ class SiderCustom extends Component {
                         key="/app/animation"
                         title={<span><Icon type="rocket" /><span className="nav-text">动画</span></span>}
                     >
-
                         <Menu.Item key="/app/animation/basicAnimations"><Link to={'/app/animation/basicAnimations'}>基础动画</Link></Menu.Item>
                         <Menu.Item key="/app/animation/exampleAnimations"><Link to={'/app/animation/exampleAnimations'}>动画案例</Link></Menu.Item>
                     </SubMenu>
@@ -82,7 +84,6 @@ class SiderCustom extends Component {
                     >
                         <Menu.Item key="/login"><Link to={'/login'}>登录</Link>登录</Menu.Item>
                         <Menu.Item key="/404"><Link to={'/404'}>404</Link></Menu.Item>
-
                     </SubMenu>
                     <SubMenu
                         key="/app/ui"

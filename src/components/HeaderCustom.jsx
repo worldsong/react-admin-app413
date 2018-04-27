@@ -3,7 +3,7 @@ import { Menu, Icon, Layout, Badge } from 'antd';
 import screenfull from 'screenfull';
 import { gitOauthToken, gitOauthInfo } from '../axios';
 import { queryString } from '../utils/index';
-import avater from '../style/imgs/b1.jpg';
+import avater from '../style/imgs/bjt.png';
 
 const { Header } = Layout;
 const SubMenu = Menu.SubMenu;
