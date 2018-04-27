@@ -34,6 +34,8 @@ import ExampleAnimations from './components/animation/ExampleAnimations';
 
 import Dashboard from './components/dashboard/Dashboard';
 
+import registerServiceWorker from './registerServiceWorker';
+
 ReactDOM.render(
   <Router history={hashHistory}>
       <Route path={'/' } components={Page}>
@@ -76,3 +78,4 @@ ReactDOM.render(
   </Router>,
   document.getElementById('root')
 );
+registerServiceWorker();
