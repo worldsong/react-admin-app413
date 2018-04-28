@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
+import { Link } from 'react-router';
+
 const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
-import { Link } from 'react-router';
 
 class SiderCustom extends Component {
     state = {
@@ -12,18 +13,22 @@ class SiderCustom extends Component {
         selectedKey: ''
     };
     componentDidMount() {
-        const _path = this.props.path;
-        this.setState({
-            openKey: _path.substr(0, _path.lastIndexOf('/')),
-            selectedKey: _path
-        });
+        this.setMenuOpen(this.props);
     }
     componentWillReceiveProps(nextProps) {
         console.log(nextProps);
         this.onCollapse(nextProps.collapsed);
+        this.setMenuOpen(nextProps)
     }
+    setMenuOpen = props => {
+        const {path} = props;
+        this.setState({
+            openKey: path.substr(0, path.lastIndexOf('/')),
+            selectedKey: path
+        });
+    };
     onCollapse = (collapsed) => {
-        console.log("bug find" + collapsed);
+        console.log(collapsed);
         this.setState({
             collapsed,
             mode: collapsed ? 'vertical' : 'inline',
@@ -47,9 +52,7 @@ class SiderCustom extends Component {
             <Sider
                 trigger={null}
                 breakpoint="lg"
-                collapsible
                 collapsed={this.props.collapsed}
-                onCollapse={this.onCollapse}
                 style={{overflowY: 'auto'}}
             >
                 <div className="logo" />
@@ -61,6 +64,9 @@ class SiderCustom extends Component {
                     openKeys={[this.state.openKey]}
                     onOpenChange={this.openMenu}
                 >
+                    <Menu.Item key="/app/dashboard/index">
+                        <Link to={'/app/dashboard/index'}><Icon type="mobile" /><span className="nav-text">首页</span></Link>
+                    </Menu.Item>
                     <SubMenu
                         key="/app/chart"
                         title={<span><Icon type="area-chart" /><span className="nav-text">图表</span></span>}
@@ -72,7 +78,6 @@ class SiderCustom extends Component {
                         key="/app/animation"
                         title={<span><Icon type="rocket" /><span className="nav-text">动画</span></span>}
                     >
-
                         <Menu.Item key="/app/animation/basicAnimations"><Link to={'/app/animation/basicAnimations'}>基础动画</Link></Menu.Item>
                         <Menu.Item key="/app/animation/exampleAnimations"><Link to={'/app/animation/exampleAnimations'}>动画案例</Link></Menu.Item>
                     </SubMenu>
@@ -83,6 +88,13 @@ class SiderCustom extends Component {
                         <Menu.Item key="/login"><Link to={'/login'}>登录</Link>登录</Menu.Item>
                         <Menu.Item key="/404"><Link to={'/404'}>404</Link></Menu.Item>
 
+                    </SubMenu>
+                    <SubMenu
+                        key="/app/auth"
+                        title={<span><Icon type="safety" /><span className="nav-text">权限管理</span></span>}
+                    >
+                        <Menu.Item key="/app/auth/basic"><Link to={'/app/auth/basic'}>基础演示</Link></Menu.Item>
+                        <Menu.Item key="/app/auth/routerEnter"><Link to={'/app/auth/routerEnter'}>路由拦截</Link></Menu.Item>
                     </SubMenu>
                     <SubMenu
                         key="/app/ui"
