@@ -55,6 +55,17 @@ class App extends Component {
                     React-admin ©2018 Created by Worldsong
                 </Footer>
             </Layout>
+                {
+                    responsive.data.isMobile && (   // 手机端对滚动很慢的处理
+                        <style>
+                            {`
+                            #root{
+                                height: auto;
+                            }
+                        `}
+                        </style>
+                    )
+                }
         </Layout>
     );
   }
