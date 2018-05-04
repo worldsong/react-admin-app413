@@ -12,7 +12,7 @@ class Echarts extends React.Component {
             <div className="gutter-example">
                 <BreadcrumbCustom first="Chart" second="Echarts" />
                 <Row gutter={16}>
-                    <Col className="gutter-row" span={24}>
+                    <Col className="gutter-row" md={24}>
                         <div className="gutter-box">
                             <Card title="区域图" bordered={false}>
                                 <EchartsArea />
