@@ -12,7 +12,7 @@ class Recharts extends React.Component {
             <div className="gutter-example">
                 <BreadcrumbCustom first="Chart" second="Recharts" />
                 <Row gutter={16}>
-                    <Col className="gutter-row" span={24}>
+                    <Col className="gutter-row" md={24}>
                         <div className="gutter-box">
                             <Card title="基础线形图" bordered={false}>
                                 <RechartsSimpleLineChart />
@@ -21,7 +21,7 @@ class Recharts extends React.Component {
                     </Col>
                 </Row>
                 <Row gutter={16}>
-                    <Col className="gutter-row" span={24}>
+                    <Col className="gutter-row" md={24}>
                         <div className="gutter-box">
                             <Card title="基础线形图" bordered={false}>
                                 <RechartsBarChart />
@@ -30,14 +30,14 @@ class Recharts extends React.Component {
                     </Col>
                 </Row>
                 <Row gutter={16}>
-                    <Col className="gutter-row" span={12}>
+                    <Col className="gutter-row" md={12}>
                         <div className="gutter-box">
                             <Card title="基础线形图" bordered={false}>
                                 <RechartsRadialBarChart />
                             </Card>
                         </div>
                     </Col>
-                    <Col className="gutter-row" span={12}>
+                    <Col className="gutter-row" md={12}>
                         <div className="gutter-box">
                             <Card title="基础线形图" bordered={false}>
                                 <RechartsRadarChart />

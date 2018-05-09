@@ -12,7 +12,7 @@ class Basic extends Component {
                 <AuthWidget
                     children={auth => (
                         <Row>
-                            <Col span={24}>
+                            <Col md={24}>
                                 <Card bordered={false} bodyStyle={{minHeight: 600}}>
                                     {!auth.uid && <h2 style={{height: 500}} className="center">登录之后你将看到一张美女图</h2>}
                                     {
